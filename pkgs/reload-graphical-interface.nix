@@ -1,6 +1,5 @@
 {
   writeShellScriptBin,
-  waybar,
   ...
 }:
 writeShellScriptBin "reload-graphical-interface" ''
@@ -11,7 +10,7 @@ writeShellScriptBin "reload-graphical-interface" ''
       fi
   done
 
-  ${waybar}/bin/waybar > /dev/null 2>&1 &
+  waybar > /dev/null 2>&1 &
   swaync > /dev/null 2>&1 &
 
   exit 0

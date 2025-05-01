@@ -10,13 +10,13 @@
 writeShellScriptBin "showcase" ''
   hyprctl dispatch movecursor 50 50
   sleep 0.1
-  ${ghostty}/bin/ghostty -e sh -c "sleep 0.6 && ${asciiquarium-transparent}/bin/asciiquarium --transparent" &
+  ${ghostty}/bin/ghostty -e "sleep 0.6 && ${asciiquarium-transparent}/bin/asciiquarium --transparent" &
   sleep 0.1
-  ${ghostty}/bin/ghostty -e sh -c "sleep 0.4 && cava" &
+  ${ghostty}/bin/ghostty -e "sleep 0.4 && cava" &
   sleep 0.1
-  ${ghostty}/bin/ghostty -e sh -c "sleep 0.2 && ${pipes-rs}/bin/pipes-rs" &
+  ${ghostty}/bin/ghostty -e "sleep 0.2 && ${pipes-rs}/bin/pipes-rs" &
   sleep 0.1
-  ${ghostty}/bin/ghostty -e sh -c "sleep 0.3 && ${tty-clock}/bin/tty-clock" &
+  ${ghostty}/bin/ghostty -e "sleep 0.3 && ${tty-clock}/bin/tty-clock" &
   sleep 0.1
-  ${ghostty}/bin/ghostty -e sh -c "sleep 0.7 && ${chafa}/bin/chafa ${./dingus.gif}" &
+  ${ghostty}/bin/ghostty -e "sleep 0.7 && ${chafa}/bin/chafa ${./dingus.gif}" &
 ''

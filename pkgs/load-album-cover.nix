@@ -1,6 +1,5 @@
 {
   writeShellScriptBin,
-  imagemagick,
   curl,
   playerctl,
   ...
@@ -24,8 +23,7 @@ writeShellScriptBin "load-album-cover" ''
       path="/tmp/hyprlock/$(basename $url)"
       if ! test -e $path; then
           ${curl}/bin/curl -s $url -o "$path"
-          ${imagemagick}/bin/magick $path "$path.png"
       fi
-      echo "$path.png"
+      echo $path
   fi
 ''

@@ -12,4 +12,5 @@ pkgs: {
   setup-workflow-atlas = pkgs.callPackage ./setup-workflow-atlas.nix {};
   setup-workflow-aurora = pkgs.callPackage ./setup-workflow-aurora.nix {};
   toggle-caffeine-mode = pkgs.callPackage ./toggle-caffeine-mode.nix {};
+  clipboard = pkgs.callPackage ./clipboard {};
 }

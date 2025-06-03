@@ -32,6 +32,7 @@ inputbar {
     spacing:                     0px;
     padding:                     128px 64px;
     orientation:                 horizontal;
+    background-color:            transparent;
     background-image:            url("~/.current_wallpaper", width);
 }
 
@@ -43,7 +44,6 @@ entry {
     cursor:                      inherit;
     placeholder:                 " Search";
     placeholder-color:           inherit;
-
     border-radius:               12px;
     background-color:            black / 48%;
     text-color:                  @text;

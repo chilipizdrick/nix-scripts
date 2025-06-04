@@ -1,13 +1,16 @@
 {
   writeShellScriptBin,
-  killall,
-  hypridle,
   libnotify,
   ...
-}:
-writeShellScriptBin "toggle-caffeine-mode" ''
-  pidof hypridle \
-    && ${killall}/bin/killall hypridle \
-    && ${libnotify}/bin/notify-send '☕ Caffeine mode enabled' \
-    || $(${hypridle}/bin/hypridle & ${libnotify}/bin/notify-send '☕ Caffeine mode disabled')
-''
+}: let
+  serviceName = "hypridle.service";
+in
+  writeShellScriptBin "toggle-caffeine-mode" ''
+    systemctl --user is-active ${serviceName} \
+      && systemctl --user stop ${serviceName} \
+      && ${libnotify}/bin/notify-send '☕ Caffeine mode enabled' \
+      || $(
+        systemctl --user start ${serviceName} \
+        && ${libnotify}/bin/notify-send '☕ Caffeine mode disabled'
+      )
+  ''

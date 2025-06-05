@@ -1,17 +1,16 @@
-{
-  writeShellScriptBin,
-  ...
-}:
+{writeShellScriptBin, ...}:
 writeShellScriptBin "reload-graphical-interface" ''
-  _ps=(waybar rofi swaync)
-  for _prs in "''${_ps[@]}"; do
-      if pidof "''${_prs}" >/dev/null; then
-          pkill "''${_prs}"
-      fi
+  services=(waybar.service swww.service gammastep.service)
+
+  for service in "''${services[@]}"; do
+    if systemctl --user is-active "''${service}" > /dev/null; then
+      systemctl --user stop "''${service}"
+    fi
   done
 
-  waybar > /dev/null 2>&1 &
-  swaync > /dev/null 2>&1 &
+  for service in "''${services[@]}"; do
+    systemctl --user start "''${service}"
+  done
 
   exit 0
 ''

@@ -8,6 +8,7 @@ pkgs: {
   toggle-tailscale = pkgs.callPackage ./toggle-tailscale.nix {};
   toggle-zapret = pkgs.callPackage ./toggle-zapret.nix {};
   query-tailscale = pkgs.callPackage ./query-tailscale.nix {};
+  query-zapret = pkgs.callPackage ./query-zapret.nix {};
   spread-propaganda = pkgs.callPackage ./spread-propaganda {};
   showcase = pkgs.callPackage ./showcase {};
   setup-workflow-atlas = pkgs.callPackage ./setup-workflow-atlas.nix {};

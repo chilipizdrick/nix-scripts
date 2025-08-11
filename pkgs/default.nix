@@ -6,6 +6,7 @@ pkgs: {
   toggle-hyprland-layout = pkgs.callPackage ./toggle-hyprland-layout.nix {};
   select-wallpaper = pkgs.callPackage ./select-wallpaper {};
   toggle-tailscale = pkgs.callPackage ./toggle-tailscale.nix {};
+  toggle-zapret = pkgs.callPackage ./toggle-zapret.nix {};
   query-tailscale = pkgs.callPackage ./query-tailscale.nix {};
   spread-propaganda = pkgs.callPackage ./spread-propaganda {};
   showcase = pkgs.callPackage ./showcase {};

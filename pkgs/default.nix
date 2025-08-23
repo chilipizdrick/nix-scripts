@@ -16,4 +16,5 @@ pkgs: {
   toggle-caffeine-mode = pkgs.callPackage ./toggle-caffeine-mode.nix {};
   clipboard = pkgs.callPackage ./clipboard {};
   ocr = pkgs.callPackage ./ocr.nix {};
+  hijacker-lite = pkgs.callPackage ./hijacker-lite.nix {};
 }

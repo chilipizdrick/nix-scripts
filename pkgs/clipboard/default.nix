@@ -1,6 +1,6 @@
 {
   writeShellScriptBin,
-  rofi-wayland,
+  rofi,
   cliphist,
   wl-clipboard,
   ...
@@ -8,7 +8,7 @@
 writeShellScriptBin "clipboard" ''
   while true; do
       result=$(
-          ${rofi-wayland}/bin/rofi -dmenu \
+          ${rofi}/bin/rofi -dmenu \
               -kb-custom-1 "Control-Delete" \
               -kb-custom-2 "Alt-Delete" \
               -theme ${./theme.rasi} < <(${cliphist}/bin/cliphist list)

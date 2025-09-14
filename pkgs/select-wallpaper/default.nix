@@ -1,6 +1,6 @@
 {
   writeShellScriptBin,
-  rofi-wayland,
+  rofi,
   swww,
   ...
 }:
@@ -17,7 +17,7 @@ writeShellScriptBin "select-wallpaper" ''
   randomNumber=$(( ($(date +%s) + RANDOM) + $$ ))
   randomPicture="''${PICS[$(( randomNumber % ''${#PICS[@]} ))]}"
   randomChoice="[''${#PICS[@]}] Random"
-  rofiCommand="${rofi-wayland}/bin/rofi -show -dmenu -theme ${./theme.rasi}"
+  rofiCommand="${rofi}/bin/rofi -show -dmenu -theme ${./theme.rasi}"
 
   executeCommand() {
     ${swww}/bin/swww img "$1" ''${SWWW_PARAMS}
@@ -61,7 +61,7 @@ writeShellScriptBin "select-wallpaper" ''
     fi
   }
 
-  if pidof ${rofi-wayland}/bin/rofi > /dev/null; then
+  if pidof ${rofi}/bin/rofi > /dev/null; then
     pkill rofi
     exit 0
   fi

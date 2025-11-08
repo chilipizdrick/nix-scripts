@@ -20,7 +20,7 @@ writeShellScriptBin "ocr" ''
   ${hyprshot}/bin/hyprshot -m region -f image.png --silent -o $image_dir
   sleep 0.1
   ${imagemagick}/bin/mogrify -modulate 100,0 -resize 400% "$image_dir/image.png"
-  ${tesseract}/bin/tesseract "$image_dir/image.png" "$image_dir/text" &>/dev/null
+  ${tesseract}/bin/tesseract -l eng+rus "$image_dir/image.png" "$image_dir/text" &>/dev/null
   ${wl-clipboard}/bin/wl-copy <"$image_dir/text.txt"
   ${libnotify}/bin/notify-send "Extracted text into clipboard"
 

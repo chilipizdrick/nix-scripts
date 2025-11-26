@@ -17,4 +17,5 @@ pkgs: {
   clipboard = pkgs.callPackage ./clipboard {};
   ocr = pkgs.callPackage ./ocr.nix {};
   hijacker-lite = pkgs.callPackage ./hijacker-lite.nix {};
+  xdph-picker = pkgs.callPackage ./xdph-picker.nix {};
 }
